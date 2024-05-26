@@ -62,3 +62,77 @@ ASCI art characters for creating diagrams
 └───┘
 
 ```
+
+# Not-Ascii
+- https://support.typora.io/Draw-Diagrams-With-Markdown/
+
+### Sequence Diagrams
+This feature uses js-sequence, which turns the following code block into a rendered diagram:
+
+```sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
+
+### Flowcharts
+This feature uses flowchart.js, which turns the following code block into a rendered diagram:
+
+```flow
+st=>start: Start
+op=>operation: Your Operation
+cond=>condition: Yes or No?
+e=>end
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
+
+### Flowcharts
+```mermaid
+graph LR
+A[Hard edge] -->B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+```
+
+### Gitgraph Diagrams / Commit Flow
+
+```mermaid
+gitGraph
+       commit
+       commit
+       branch develop
+       checkout develop
+       commit
+       commit
+       checkout main
+       merge develop
+       commit
+       commit
+```
+
+### Pie Charts
+
+```mermaid
+pie
+    title Pie Chart
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 150 
+```
+
+### State Diagrams
+
+```mermaid
+stateDiagram
+    [*] --> Still
+    Still --> [*]
+
+    Still --> Moving
+    Moving --> Still
+    Moving --> Crash
+    Crash --> [*]
+```
